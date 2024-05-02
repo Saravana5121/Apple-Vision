@@ -2,13 +2,22 @@ import logo from "../assets/logo1.png";
 import { navItems } from "../constants";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
+
+
 const NavBar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
   };
   return (
-    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
+    <motion.nav
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80"
+    >
       <div className="container px-4 mx-auto relative text-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-shrink-0">
@@ -62,7 +71,7 @@ const NavBar = () => {
           </div>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

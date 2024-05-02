@@ -1,5 +1,6 @@
 import previewImg from "../assets/hero.png";
 import previewImg1 from "../assets/preview.jpg";
+import { motion } from "framer-motion";
 
 const Preview = () => {
   return (
@@ -14,7 +15,20 @@ const Preview = () => {
       </h2>
       <div className="mt-10 mb-5">
         <div className="flex flex-wrap items-center justify-center gap-2">
-          <img src={previewImg} alt="preview" className="w-[50rem]" />
+          <motion.img
+            initial={{
+              opacity: 0,
+              boxShadow: "0px 0px 40px rgba(0, 0, 0, 0.5)",
+            }}
+            whileInView={{
+              opacity: 1,
+              boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
+            }}
+            transition={{ duration: 1.5, delay: 1 }}
+            src={previewImg}
+            alt="preview"
+            className="w-[50rem]"
+          />
           <p className="text-sm text-neutral-500 text-center m-5">
             With Apple Vision Pro, you have an infinite canvas that transforms
             how you use the apps you love. Arrange apps anywhere and scale them
