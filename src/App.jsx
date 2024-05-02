@@ -1,4 +1,5 @@
 import Feature from "./components/Feature";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
 import Preview from "./components/Preview";
@@ -13,6 +14,7 @@ export default function App() {
         <Feature />
         <Preview />
         <Testimonials />
+        <Footer />
       </div>
     </>
   );
